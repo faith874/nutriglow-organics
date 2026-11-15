@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriGlow Organics | Natural Weight Gain & Wellness GH</title>
+  <style>
+    :root {
+      --primary-pink: #d81b60;
+      --soft-pink: #fce4ec;
+      --accent-teal: #00bcd4;
+      --dark-text: #222222;
+      --muted-text: #666666;
+      --bg-cream: #fff9fb;
+      --shadow: 0 10px 30px rgba(216, 27, 96, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--dark-text);
+      padding-bottom: 60px;
+      overflow-x: hidden;
+    }
+
+    /* Top Promo Bar */
+    .promo-bar {
+      background: linear-gradient(90deg, var(--primary-pink), var(--accent-teal));
+      color: white;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      animation: slideDown 0.5s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Navigation Bar */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--primary-pink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      background: var(--accent-teal);
+      color: white;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 9px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark-text);
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tab-btn:hover {
+      background: var(--soft-pink);
+      color: var(--primary-pink);
+      transform: translateY(-2px);
+    }
+
+    .tab-btn.active {
+      background: var(--primary-pink);
+      color: white;
+      box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+    }
+
+    /* Tab Content Sections */
+    .tab-content {
+      display: none;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+      animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, #ffe3ec 0%, #e0f7fa 100%);
+      border-radius: 28px;
+      padding: 55px 35px;
+      text-align: center;
+      border: 1px solid #f8bbd0;
+      margin-bottom: 35px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: white;
+      color: var(--primary-pink);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: var(--primary-pink);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--muted-text);
+      max-width: 600px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      background: var(--primary-pink);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(216, 27, 96, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      background: #c2185b;
+    }
+
+    /* Trust Grid */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .trust-card {
+      background: white;
+      padding: 24px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      border: 1px solid #fce4ec;
+      transition: transform 0.3s ease;
+    }
+
+    .trust-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .trust-card h3 {
+      font-size: 17px;
+      color: var(--primary-pink);
+      margin-bottom: 8px;
+    }
+
+    .trust-card p {
+      font-size: 13px;
+      color: var(--muted-text);
+      line-height: 1.5;
+    }
+
+    /* Product Cards Grid */
+    .section-title {
+      font-size: 26px;
+      color: var(--primary-pink);
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--muted-text);
+      margin-bottom: 25px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #fce4ec;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(216, 27, 96, 0.15);
+      border-color: var(--primary-pink);
+    }
+
+    .card-top {
+      background: linear-gradient(135deg, #fce4ec, #e0f7fa);
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-top img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .card-top img {
+      transform: scale(1.08);
+    }
+
+    .tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--primary-pink);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 14px;
+      z-index: 2;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .tag.teal {
+      background: var(--accent-teal);
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card-body h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--dark-text);
+      font-weight: 700;
+    }
+
+    .card-body p {
+      font-size: 13px;
+      color: var(--muted-text);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f5f5f5;
+      padding-top: 14px;
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--primary-pink);
+    }
+
+    .order-mini-btn {
+      background: var(--accent-teal);
+      color: white;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .order-mini-btn:hover {
+      background: #00acc1;
+    }
+
+    /* Product Modal / Quick View Popup */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .modal-card {
+      background: white;
+      width: 100%;
+      max-width: 440px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    @keyframes scaleUp {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      background: #fce4ec;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .modal-body h2 {
+      font-size: 22px;
+      color: var(--primary-pink);
+      margin-bottom: 8px;
+    }
+
+    .modal-body p {
+      font-size: 14px;
+      color: var(--muted-text);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Order Form */
+    .form-box {
+      background: white;
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 32px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid #f8bbd0;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--dark-text);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #eee;
+      border-radius: 12px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--primary-pink);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--primary-pink);
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(216, 27, 96, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="promo-bar">
+    🇬🇭 Nationwide Delivery Across Ghana • 100% Organic Herbal Formulas & Curves Set
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">NutriGlow <span>Organics</span></div>
+      <div class="nav-tabs">
+        <button class="tab-btn active" onclick="openTab('home', this)">Home</button>
+        <button class="tab-btn" onclick="openTab('products', this)">Syrups & Powders</button>
+        <button class="tab-btn" onclick="openTab('combos', this)">3-in-1 Combos</button>
+        <button class="tab-btn" onclick="openTab('order', this)">Order Now</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- TAB 1: HOME -->
+  <section id="home" class="tab-content active">
+    <div class="hero">
+      <div class="hero-badge">✨ Ghana's #1 Viral Herbal Wellness Brand</div>
+      <h1>Glow, Gain & Enhance Your Natural Curves</h1>
+      <p>Formulated with pure organic herbs, Maca root, and natural extracts to support healthy weight gain, feminine firmness, and confidence.</p>
+      <button class="cta-btn" onclick="switchToTab('products')">Explore Bestsellers</button>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card">
+        <h3>🌿 100% Organic</h3>
+        <p>Safe herbal blends crafted for steady, natural body enhancement without harsh side effects.</p>
+      </div>
+      <div class="trust-card">
+        <h3>🚚 Fast Dispatch</h3>
+        <p>Same-day delivery in Accra & Kumasi, plus swift courier service across all regions.</p>
+      </div>
+      <div class="trust-card">
+        <h3>💖 Proven Results</h3>
+        <p>Trusted by hundreds of happy clients across Ghana achieving their body goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: SYRUPS & POWDERS -->
+  <section id="products" class="tab-content">
+    <h2 class="section-title">Signature Formulas</h2>
+    <p class="section-sub">Tap on any product card below to view details and order instantly.</p>
+
+    <div class="product-grid">
+      <div class="card" onclick="showProductDetails('NutriGlow Enhancement Syrup', 'GH₵ 220', 'Rich herbal syrup designed to boost feminine curves, firmness, and natural hormone balance.', 'syrup.jpg', 'Best Seller 🔥')">
+        <div class="card-top">
+          <span class="tag">Best Seller 🔥</span>
+          <img src="syrup.jpg" alt="Enhancement Syrup" onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400'">
+        </div>
+        <div class="card-body">
+          <h3>NutriGlow Enhancement Syrup</h3>
+          <p>Rich herbal syrup designed to boost feminine curves, firmness, and natural hormone balance.</p>
+          <div class="card-footer">
+            <span class="price">GH₵ 220</span>
+            <button class="order-mini-btn" onclick="event.stopPropagation(); selectProduct('NutriGlow Enhancement Syrup (GH₵ 220)')">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showProductDetails('Enhancement & Firming Powder', 'GH₵ 250', 'Nutrient-dense organic powder blend that mixes easily into smoothies, porridge, or milk for steady mass.', 'powder.jpg', '300g Pouch')">
+        <div class="card-top">
+          <span class="tag teal">300g Pouch</span>
+          <img src="powder.jpg" alt="Firming Powder" onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400'">
+        </div>
+        <div class="card-body">
+          <h3>Enhancement & Firming Powder</h3>
+          <p>Nutrient-dense organic powder blend that mixes easily into smoothies, porridge, or milk.</p>
+          <div class="card-footer">
+            <span class="price">GH₵ 250</span>
+            <button class="order-mini-btn" onclick="event.stopPropagation(); selectProduct('Enhancement & Firming Powder (GH₵ 250)')">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showProductDetails('Herbal Firming Massage Oil & BBL Cream', 'GH₵ 150', 'Concentrated botanical oil and firming cream formulated to nourish skin elasticity and enhance targeted curves.', 'topical.jpg', 'Topical Care')">
+        <div class="card-top">
+          <span class="tag">Topical Care</span>
+          <img src="topical.jpg" alt="Massage Oil & Cream" onerror="this.src='https://images.unsplash.com/photo-1608248597359-994b59368d65?w=400'">
+        </div>
+        <div class="card-body">
+          <h3>Herbal Firming Massage Oil</h3>
+          <p>Concentrated botanical oil formulated to nourish skin elasticity and enhance firmness.</p>
+          <div class="card-footer">
+            <span class="price">GH₵ 150</span>
+            <button class="order-mini-btn" onclick="event.stopPropagation(); selectProduct('Herbal Firming Massage Oil (GH₵ 150)')">Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: COMBOS -->
+  <section id="combos" class="tab-content">
+    <h2 class="section-title">Transformation Bundles</h2>
+    <p class="section-sub">Tap any bundle to inspect and select for checkout.</p>
+
+    <div class="product-grid">
+      <div class="card" onclick="showProductDetails('Complete 3-in-1 Viral Set', 'GH₵ 550', 'Includes 1 Enhancement Syrup + 1 Medium 300g Firming Powder + 1 Herbal Massage Oil / BBL Cream.', 'combo.jpg', 'Save GH₵ 70 💖')">
+        <div class="card-top">
+          <span class="tag">Save GH₵ 70 💖</span>
+          <img src="combo.jpg" alt="Complete Curves Set" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400'">
+        </div>
+        <div class="card-body">
+          <h3>Complete 3-in-1 Viral Set</h3>
+          <p>Includes 1 Enhancement Syrup + 1 Medium 300g Firming Powder + 1 Herbal Massage Oil.</p>
+          <div class="card-footer">
+            <span class="price">GH₵ 550</span>
+            <button class="order-mini-btn" onclick="event.stopPropagation(); selectProduct('Complete 3-in-1 Viral Set (GH₵ 550)')">Order Bundle</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showProductDetails('Syrup & Powder Power Duo', 'GH₵ 430', 'Internal nourishment combo pairing our signature Enhancement Syrup with our 300g Firming Powder.', 'combo.jpg', 'Starter Duo')">
+        <div class="card-top">
+          <span class="tag teal">Starter Duo</span>
+          <img src="combo.jpg" alt="Power Duo" onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400'">
+        </div>
+        <div class="card-body">
+          <h3>Syrup & Powder Power Duo</h3>
+          <p>Internal nourishment combo pairing our signature Syrup with our 300g Firming Powder.</p>
+          <div class="card-footer">
+            <span class="price">GH₵ 430</span>
+            <button class="order-mini-btn" onclick="event.stopPropagation(); selectProduct('Syrup & Powder Power Duo (GH₵ 430)')">Order Bundle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 4: ORDER FORM -->
+  <section id="order" class="tab-content">
+    <div class="form-box">
+      <h2 class="section-title" style="text-align:center;">Place Your Order</h2>
+      <p class="section-sub" style="text-align:center;">Fill in your delivery details below for fast dispatch.</p>
+
+      <form onsubmit="submitOrder(event)">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="custName" placeholder="e.g. Akosua Mensah" required />
+        </div>
+        <div class="form-group">
+          <label>Phone / Call Line</label>
+          <input type="tel" id="custPhone" placeholder="e.g. 024 000 0000" required />
+        </div>
+        <div class="form-group">
+          <label>Delivery Location (City / Area)</label>
+          <input type="text" id="custLoc" placeholder="e.g. East Legon, Accra" required />
+        </div>
+        <div class="form-group">
+          <label>Selected Product / Combo</label>
+          <select id="productSelect">
+            <option>Complete 3-in-1 Viral Set (GH₵ 550)</option>
+            <option>NutriGlow Enhancement Syrup (GH₵ 220)</option>
+            <option>Enhancement & Firming Powder (GH₵ 250)</option>
+            <option>Herbal Firming Massage Oil (GH₵ 150)</option>
+            <option>Syrup & Powder Power Duo (GH₵ 430)</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Confirm Order ✨</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAIL POPUP MODAL -->
+  <div id="productModal" class="modal-overlay" onclick="closeProductModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeProductModal()">×</button>
+      <img id="modalImg" class="modal-img" src="" alt="Product" />
+      <div class="modal-body">
+        <span id="modalTag" class="tag" style="position:relative; top:0; left:0; display:inline-block; margin-bottom:10px;"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div class="modal-footer">
+          <span id="modalPrice" class="price"></span>
+          <button class="cta-btn" style="padding:10px 20px; font-size:14px;" onclick="orderFromModal()">Order This Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let activeProductString = "";
+
+    function openTab(tabId, btnElement) {
+      document.querySelectorAll('.tab-
